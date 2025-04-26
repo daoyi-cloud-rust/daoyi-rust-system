@@ -10,7 +10,7 @@ mod app_config;
 
 use crate::app_config::app_init;
 use daoyi_cloud_common::{
-    config, db, hoops, routers, shutdown_signal, tokio, Catcher, Keycert, Listener, RustlsConfig
+    config, db, hoops, common_test_routers_example, shutdown_signal, tokio, Catcher, Keycert, Listener, RustlsConfig
     , Server, Service, TcpListener,
 };
 
@@ -20,7 +20,7 @@ async fn main() {
     let config = config::get();
     db::init(&config.db).await;
 
-    let service = Service::new(routers::root())
+    let service = Service::new(common_test_routers_example::root())
         .catcher(Catcher::default().hoop(hoops::error_404))
         .hoop(hoops::cors_hoop());
     println!("🔄 在以下位置监听 {}", &config.listen_addr);

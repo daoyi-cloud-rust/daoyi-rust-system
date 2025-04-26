@@ -5,4 +5,4 @@ edition = "2024"
 readme = "./README.md"
 
 [dependencies]
-daoyi-cloud-common = { version = "0.3.0", path = "../daoyi-cloud-common" }
+daoyi-cloud-common = { version = "0.3.2", path = "../daoyi-cloud-common" }
