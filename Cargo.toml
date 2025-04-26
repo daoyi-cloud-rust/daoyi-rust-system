@@ -1,0 +1,8 @@
+[package]
+name = "daoyi-rust-system"
+version = "0.1.1"
+edition = "2024"
+readme = "./README.md"
+
+[dependencies]
+daoyi-cloud-common = { version = "0.3.0", path = "../daoyi-cloud-common" }
