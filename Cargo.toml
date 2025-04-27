@@ -6,4 +6,5 @@ readme = "./README.md"
 publish = false
 
 [dependencies]
-daoyi-cloud-common = { version = "0.3.3" }
+daoyi-cloud-common = { version = "0.3.3", path = "../daoyi-cloud-common" }
+askama = "0.14.0"
