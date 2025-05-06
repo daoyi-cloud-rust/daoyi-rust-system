@@ -17,6 +17,7 @@ pub fn root() -> Router {
         .hoop(Logger::new())
         .get(demo::index)
         .push(Router::with_path("health_check").get(health_check::health_check))
+        .push(Router::with_path("ping").get(health_check::health_check))
         .push(Router::with_path("favicon.ico").get(favicon))
         .push(Router::with_path("assets/{**rest}").get(static_embed::<Assets>()));
     let doc = OpenApi::new("道一开源 Rust Admin web api", "0.0.1").merge_router(&router);
